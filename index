@@ -1,21 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css">
-
 
     <style>
         html,
         body {
             height: 100%;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
         .main-container {
@@ -26,23 +24,51 @@
         .sidebar {
             flex: 0 0 280px;
             background-color: #333;
-            /* Changing background color for visibility */
+            color: white;
+            padding: 60px;
+            height: 100vh;
+            overflow-y: auto;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            background-color: #040B14;
+        }
+
+        .sidebar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .sidebar .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sidebar .social-links a {
+            color: white;
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .sidebar .social-links a i {
             color: white;
         }
 
         .content {
             flex-grow: 1;
             background-color: #f4f4f4;
-
             padding: 20px;
+            margin-left: 275px;
+            overflow-y: auto;
         }
 
-        div.name {
-            font-weight: 700;
-            font-size: 20px;
-        }
 
-        .right-background {
+
+        .right-container {
             flex-grow: 1;
             background-image: url('hero-bg.jpg');
             background-size: cover;
@@ -50,125 +76,185 @@
             position: relative;
         }
 
-        .social-links a {
-            color: rgb(26, 150, 178);
-            margin: 2px;
-            width: 40px;
-            height: 40px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 20%;
+        .hero-container {
             text-align: center;
-            line-height: 40px;
-            font-size: 24px;
+            padding: 50px;
+        }
+
+        .hero-container h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-container p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        .typed {
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        @keyframes blink-caret {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+        }
+
+        .nav-link {
+            color: white;
+        }
+
+        #aboutname {
+            padding-top: 30px;
+            color: #112C53;
         }
     </style>
 </head>
 
 <body>
     <div class="main-container">
-        <aside class="sidebar d-flex flex-column p-3">
+        <aside class="sidebar">
             <div class="text-center">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                    <img src="profile-img.jpg" width="200" height="200" class="rounded-circle img-fluid mx-auto d-block"
-                        alt="Sidebar Image">
-                </a>
-                <div class="align-items-center name">Kanika gupta</div>
-                <div class="social-links mt-3 text-center text-light">
+                <img src="profile-img.jpg" alt="Profile Image">
+                <div class="name">Kanika Gupta</div>
+                <div class="social-links">
                     <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                     <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
                     <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                     <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 </div>
             </div>
 
-
-            </a>
             <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
+
+            <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#home"></use>
-                        </svg>
-                        Home
-                    </a>
+                    <a class="nav-link active" href="#"><i class="bx bx-home"></i> Home</a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#speedometer2"></use>
-                        </svg>
-                        About
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about"><i class="bx bx-user"></i> About</a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#table"></use>
-                        </svg>
-                        Resume
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#resume"><i class="bx bx-file"></i> Resume</a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#grid"></use>
-                        </svg>
-                        Portfolio
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bx bx-folder"></i> Portfolio</a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#people-circle"></use>
-                        </svg>
-                        Services
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bx bx-server"></i> Services</a>
                 </li>
-                <li>
-                    <a href="#" class="nav-link text-white">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#people-circle"></use>
-                        </svg>
-                        Contact
-                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bx bx-envelope"></i> Contact</a>
                 </li>
             </ul>
-            <hr>
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-                    data-bs-toggle="dropdown" aria-expanded="false">
 
-                    <strong>mdo</strong>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
-            </div>
+            <hr>
         </aside>
-        <div class="right-background">
-            <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-                <div class="hero-container aos-init aos-animate" data-aos="fade-in">
-                    <h1>Kanika Gupta</h1>
-                    <p>I'm <span class="typed"
-                            data-typed-items="Designer, Developer, Freelancer, Photographer">Freelancer</span><span
-                            class="typed-cursor typed-cursor--blink" aria-hidden="true">|</span></p>
+
+        <div class="content right-container">
+            <section id="hero" class="d-flex justify-content-center align-items-center">
+                <div class="hero-container">
+                    <h1>Welcome to My Portfolio</h1>
+                    <p>I'm <span class="typed" data-typed-items="Designer, Developer">Developer</span></p>
                 </div>
             </section>
         </div>
+    </div>
+    <section class="about mt-5" id="about">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h1 id="aboutname">
+                        <a href="#"
+                            class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                            About</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia voluptate, in amet sequi
+                        possimus
+                        ipsam
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam inventore delectus odit
+                        quo
+                        vel at eveniet accusamus soluta assumenda perspiciatis!
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 align-self-end">
+                    One of three columns
+                </div>
+            </div>
+        </div> -->
+
+        </div>
+    </section>
+    <!-- <main id="main">
+
+      
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>About</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3>UI/UX Designer &amp; Web Developer.</h3>
+                        <p class="fst-italic">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore
+                            magna aliqua.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>5 Nov 2001
+                                            1995</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong>
+                                        <span>www.example.com</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+123 456
+                                            7890</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>New York,
+                                            USA</span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>30</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Master</span>
+                                    </li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong>
+                                        <span>email@example.com</span></li>
+                                    <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong>
+                                        <span>Available</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p> -->
 
 
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
 </body>
 
 </html>
